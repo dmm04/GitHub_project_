@@ -134,7 +134,7 @@ $stmt = $pdo->query($sql);
                     <th>ID</th>
                     <th>Organizer</th>
                     <th>Event Name</th>
-                    <th>Publisher</th>
+                    <th>Location</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -142,13 +142,13 @@ $stmt = $pdo->query($sql);
                 <?php while ($row = $stmt->fetch()): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
-                    <td><?php echo htmlspecialchars($row['author']); ?></td>
-                    <td><?php echo htmlspecialchars($row['title']); ?></td>
-                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
+                    <td><?php echo htmlspecialchars($row['organizer']); ?></td>
+                    <td><?php echo htmlspecialchars($row['event_name']); ?></td>
+                    <td><?php echo htmlspecialchars($row['location']); ?></td>
                     <td>
                         <form action="index5.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                            <input type="submit" value="Ban!">
+                            <input type="submit" value="Remove Event">
                         </form>
                     </td>
                 </tr>
@@ -159,18 +159,18 @@ $stmt = $pdo->query($sql);
 
     <!-- Form section with container -->
     <div class="form-container">
-        <h2>Condemn a Book Today</h2>
+        <h2>Add Event</h2>
         <form action="index5.php" method="post">
             <label for="author">Author:</label>
-            <input type="text" id="author" name="author" required>
+            <input type="text" id="organizer" name="organizer" required>
             <br><br>
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="event_name" name="event_name" required>
             <br><br>
             <label for="publisher">Publisher:</label>
-            <input type="text" id="publisher" name="publisher" required>
+            <input type="text" id="location" name="location" required>
             <br><br>
-            <input type="submit" value="Condemn Book">
+            <input type="submit" value="Host Event">
         </form>
     </div>
 </body>
