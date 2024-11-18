@@ -32,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register - Betty's Book Banning</title>
+    <title>Register - </title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="auth-container">
-        <h1>Register</h1>
+        <h1>Register - Community Events Central</h1>
         <?php if ($error_message): ?>
             <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
         <?php endif; ?>
